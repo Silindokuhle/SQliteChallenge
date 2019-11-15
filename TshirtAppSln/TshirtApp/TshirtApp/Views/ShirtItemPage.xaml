@@ -1,31 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Todo.TodoItemPage" Title="{Binding Name}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TshirtApp.ShirtItemPage" Title="{Binding Name}">
     <StackLayout Margin="20" VerticalOptions="StartAndExpand">
-        <Label Text="Name" />
-        <Entry Text="{Binding Name}" />
-        
-        <Label Text="Surname" />
-        <Entry Text="{Binding Surname}" />
-        
-        <Label Text="Gender" />
-        <Entry Text="{Binding Gender}"/>
-
-        <Label Text="T_Shirtsize" />
-        <Entry Text="{Binding T_Shirtsize}"/>
-        
-        <Label Text="T_Shirtsize" />
-        <Entry Text="{Binding T_Shirtsize}"/>
-        
-        <Label Text="DateOfOrder" />
-        <Entry Text="{Binding DateOfOrder}"/>
-
-        <Label Text="ShippingAddress" />
-        <Entry Text="{Binding ShippingAddress}"/>
-        
        
-        <Button Text="Save" Clicked="OnSaveClicked" />
-       
-        <Button Text="Cancel" Clicked="OnCancelClicked" />
        
     </StackLayout>
 </ContentPage>

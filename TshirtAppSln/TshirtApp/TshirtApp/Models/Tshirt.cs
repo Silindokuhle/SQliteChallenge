@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Essentials;
 
-namespace TshirtApp.Models
+namespace TshirtApp
 {
-    class Tees
+   public class Tshirt
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
@@ -15,7 +15,7 @@ namespace TshirtApp.Models
         public string Gender { get; set; }   
         public string T_shirtsize { get; set; }
         public string T_shirtcolor { get; set; }
-        public string Dateoforder { get; set; }
-        public string shippingaddress{ get; set; }
+        public DateTime Dateoforder { get; set; }
+        public string ShippingAddress { get; set; }
     }
 }

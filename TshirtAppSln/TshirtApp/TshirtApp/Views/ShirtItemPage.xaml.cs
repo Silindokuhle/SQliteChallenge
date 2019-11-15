@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using TshirtApp;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace TshirtApp.Views
+ 
+namespace TshirtApp
 {
     public partial class ShirtItemPage : ContentPage
     {
@@ -15,28 +10,26 @@ namespace TshirtApp.Views
         {
             InitializeComponent();
         }
-        async void OnSaveClicked(object sender, EventArgs e)
+
+        protected override void OnAppearing()
         {
-            var todoItem = (Tshirt)BindingContext;
-            await App.TshirtDatabase.SaveItemAsync(todoItem);
+            base.OnAppearing();
+            var tshirt = new Tshirt();
+            BindingContext = tshirt;
+        }
+        private async void OnSaveClicked(object sender, EventArgs e)
+        {
+            var tshirt = (Tshirt)BindingContext;
+            await App.Database.SaveItemAsync(tshirt);
             await Navigation.PopAsync();
         }
-        async void OnDeleteClicked(object sender, EventArgs e)
-        {
-            var todoItem = (Tshirt)BindingContext;
-            await App.TshirtDatabase.DeleteItemAsync(todoItem);
-            await Navigation.PopAsync();
-        }
+       
         async void OnCancelClicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
         }
-        void OnSpeakClicked(object sender, EventArgs e)
-        {
-            var todoItem = (TodoItem)BindingContext;
-            DependencyService.Get<ITextToSpeech>().Speak(todoItem.Name + " " + todoItem.Notes);
-        }
+        
     }
 }
 
-   
+    

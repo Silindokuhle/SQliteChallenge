@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="TshirtApp.Details"
-             BackgroundImageSource="download">
+             BackgroundImageSource="images">
 
     <ContentPage.Content>
         <StackLayout>
@@ -28,7 +28,7 @@
                 </Grid.ColumnDefinitions>
                 
                 <Label Text="PLACE YOUR ODER DETAILS" 
-               TextColor="DarkOrange" 
+               TextColor="DarkOliveGreen" 
                FontSize="Large" 
                FontAttributes="Bold"
                    Grid.ColumnSpan="2"
@@ -37,6 +37,7 @@
                 <Entry Placeholder="Name"
                    TextColor="Red" 
                    Grid.Row="2"
+                  
                    />
 
                 <Entry Placeholder="Surname"
@@ -54,11 +55,13 @@
                 <DatePicker 
                    Grid.Row="6"
                    TextColor="White"/>
+                
                 <Entry Placeholder="Shipping Address"
                    Grid.Row="7"
                    TextColor="Red"/>
 
                 <Button Text="SAVE" 
+                        Clicked="save_clicked"
                     FontSize="Small"
                     FontAttributes="Bold"
                     Margin="20,90"

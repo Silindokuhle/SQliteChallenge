@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using TshirtApp;
 
 namespace TshirtApp
 {
@@ -14,6 +15,7 @@ namespace TshirtApp
         {
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Tshirt>().Wait();
+
         }
         public Task<List<Tshirt>> GetItemsAsync()
         {
@@ -22,13 +24,13 @@ namespace TshirtApp
 
         public Task<List<Tshirt>> GetItemsNotDoneAsync()
         {
-            return database.QueryAsync<Tshirt>("SELECT * FROM [Slee] WHERE [Done] = 0");
+            return database.QueryAsync<Tshirt>("SELECT * FROM [Tshirt] WHERE [Done] = 0");
         }
 
         public Task<Tshirt> GetItemAsync(int id)
         {
             return database.Table<Tshirt>().Where(i => i.ID == id).FirstOrDefaultAsync();
-        }
+         }
         public Task<int> SaveItemAsync(Tshirt item)
         {
             if (item.ID != 0)
