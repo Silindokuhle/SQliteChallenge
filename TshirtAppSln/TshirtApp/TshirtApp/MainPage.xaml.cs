@@ -13,6 +13,7 @@ namespace TshirtApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+       
         public MainPage()
         {
             InitializeComponent();
@@ -20,7 +21,15 @@ namespace TshirtApp
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Details());
+           
+             await Navigation.PushAsync(new Details());
+            
+            
+        }
+
+        private async void Button_Clicked1(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new OrderPage());
         }
     }
 }

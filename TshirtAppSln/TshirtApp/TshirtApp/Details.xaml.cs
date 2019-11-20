@@ -12,6 +12,7 @@ namespace TshirtApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Details : ContentPage
     {
+        public List<Tshirt> TshirtOrder { get; set; }
         public Details()
         {
             InitializeComponent();
@@ -22,9 +23,17 @@ namespace TshirtApp
             await Navigation.PushAsync(new MainPage());
         }
 
-        private async void save_clicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            await Navigation.PushAsync(new ShirtItemPage());
+            base.OnAppearing();
+            var tshirt = new Tshirt();
+            BindingContext = tshirt;
+        }
+        private async void OnSaveClicked(object sender, EventArgs e)
+        {
+            var tshirt = (Tshirt)BindingContext;
+            await App.Database.SaveItemAsync(tshirt);
+            await Navigation.PopAsync();
         }
     }
 }

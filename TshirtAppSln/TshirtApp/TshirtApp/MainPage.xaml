@@ -15,18 +15,24 @@
                    FontSize="30"
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Center"
-                   Margin="70"/>
+                   Margin="50"/>
 
         <Image Source ="tshirt"
-               Margin="0"/>
-        
-        <Button Text="Pace Order" 
+               Margin="-20"/>
+
+        <Button Text="Place Order"
                     FontSize="Medium"
                     FontAttributes="Bold"
                     Clicked="Button_Clicked"
-                    Margin="50"
-                    
-                    />
+                    Margin="30"/>
+        
+        <Button Text="View Order" 
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Clicked="Button_Clicked1"
+                    Margin="30"/>
+
+
 
     </StackLayout>
 </ContentPage>

@@ -5,16 +5,29 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="TshirtApp.OrderPage"
-             BackgroundImageSource="images">
+             BackgroundImageSource="images"
+             Title="Orders">
     
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Your Order"
-                   FontSize="50"
-                   FontAttributes="Bold"
-                HorizontalOptions="CenterAndExpand"
-                 Margin="30,30"/>
-            
+            <ListView Margin="20" ItemsSource="{Binding Orders}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                <Label Text="YOUR ORDER" FontSize="Body" TextColor="DeepSkyBlue"/>
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                                <Label Text="{Binding Surname}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                                <Label Text="{Binding Gender}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                                <Label Text="{Binding T_shirtsize}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                                <Label Text="{Binding T_shirtcolor}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                                <Label Text="{Binding Dateoforder}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                                <Label Text="{Binding ShippingAddress}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
