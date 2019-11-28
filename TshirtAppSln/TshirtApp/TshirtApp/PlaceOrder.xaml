@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TshirtApp.PlaceOrder"
+             BackgroundImageSource="images">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <FlexLayout>
+            <Label Text="Welcome "   Margin="0,20,0,0" FontSize="40" />
+                <Label Text="{Binding Name}" Margin="0,20,0,0" FontSize="40" />
+            </FlexLayout>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+
+
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Name"  Grid.Row="1" Grid.Column="0"/>
+                <Entry Text="{Binding Name}" Grid.Row="2" Grid.Column="0"/>
+
+                <Label Text="Surname"  Grid.Row="1" Grid.Column="1"/>
+                <Entry Text="{Binding Surname}" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Text="Gender" Grid.Row="3" Grid.Column="0"/>
+                <Entry Text="{Binding Gender}" Grid.Row="4" Grid.Column="0"/>
+
+                <Label Text="T_shirtsize" Grid.Row="3" Grid.Column="1"/>
+                <Entry Text="{Binding T_shirtsize}" Grid.Row="4" Grid.Column="1"/>
+
+                <Label Text="T_shirtcolor" Grid.Row="5" Grid.Column="0"/>
+                <Entry Text="{Binding T_shirtcolor}" Grid.Row="6" Grid.Column="0"/>
+
+                <Label Text="Dateoforder" Grid.Row="5" Grid.Column="1"/>
+                <Entry Text="{Binding Dateoforder}" Grid.Row="6" Grid.Column="1"/>
+
+                <Label Text="ShippingAddress" Grid.Row="7" Grid.ColumnSpan="2"/>
+                <Entry Text="{Binding ShippingAddress}" Grid.Row="8" Grid.ColumnSpan="2"/>
+
+                <Button Text="Save Changes" Grid.Row="9" Grid.Column="0"
+                        />
+                    
+                <Button Text="View Map" Grid.Row="9" Grid.Column="1" 
+                        Clicked="buttonClicked"/>
+                
+                <Button Text="Confirm Order" Grid.Row="10" Grid.ColumnSpan="2"
+                        Clicked="Button_Clicked1"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

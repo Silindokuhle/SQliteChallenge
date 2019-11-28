@@ -10,19 +10,22 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <ListView Margin="20" ItemsSource="{Binding Orders}" HasUnevenRows="True">
+            <ListView Margin="20" ItemsSource="{Binding Orders}" HasUnevenRows="True" ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Margin="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
                                 <Label Text="YOUR ORDER" FontSize="Body" TextColor="DeepSkyBlue"/>
                                 <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-                                <Label Text="{Binding Surname}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                                <!--<Label Text="{Binding Surname}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
                                 <Label Text="{Binding Gender}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
                                 <Label Text="{Binding T_shirtsize}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
                                 <Label Text="{Binding T_shirtcolor}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
                                 <Label Text="{Binding Dateoforder}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
                                 <Label Text="{Binding ShippingAddress}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                                <Button Text="View My Order"
+                                    Clicked="Button_Clicked1">
+                                </Button>-->
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
